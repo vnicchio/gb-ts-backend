@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:11.1-alpine
+    container_name: gobarber_db
+    volumes:
+      - ./.docker/db:/var/lib/postgresql
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=gobarber
+    ports:
+      - "5432:5432"
+    networks:
+      - gobarber-network
+
+networks:
+  gobarber-network:
+    driver: bridge
