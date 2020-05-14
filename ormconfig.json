@@ -26,7 +26,7 @@
   "unifiedTopology": true,
   "entities": [
     "./src/modules/**/infra/typeorm/schemas/*.ts"
-  ],
+  ]
  }
 ]
 
