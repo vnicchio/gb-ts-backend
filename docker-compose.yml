@@ -5,13 +5,23 @@ services:
     image: postgres:11.1-alpine
     container_name: gobarber_db
     volumes:
-      - ./.docker/db:/var/lib/postgresql
+      - ./.docker/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=gobarber
     ports:
       - "5432:5432"
+    networks:
+      - gobarber-network
+
+  mongo:
+    image: mongo:latest
+    container_name: gobarber_mongo
+    volumes:
+      - ./.docker/mongo:/data/db
+    ports:
+      - "27017:27017"
     networks:
       - gobarber-network
 
