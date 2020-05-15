@@ -90,3 +90,7 @@ typings/
 tmp/*
 
 .docker
+ormconfig.json
+
+tmp/*
+!tmp/.gitkeep
